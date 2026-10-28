@@ -4,6 +4,7 @@ layout: default
 <article class="wrap narrow article">
   <header>
     <p class="meta">
+      {% if page.kind %}<span class="tag">{{ page.kind }}</span>{% endif %}
       {% if page.topic %}<span class="tag">{{ page.topic }}</span>{% endif %}
       <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y/%m/%d" }}</time>
     </p>

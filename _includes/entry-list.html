@@ -7,6 +7,7 @@
       <li>
         <article>
           <p class="meta">
+            {% if item.kind %}<span class="tag">{{ item.kind }}</span>{% endif %}
             {% if item.topic %}<span class="tag">{{ item.topic }}</span>{% endif %}
             <time datetime="{{ item.date | date_to_xmlschema }}">{{ item.date | date: "%Y/%m/%d" }}</time>
           </p>
