@@ -1,0 +1,15 @@
+---
+layout: default
+title: 個案心得
+permalink: /cases/
+description: 四月老師的個案心得。每一篇都經過改寫，並取得當事人同意。
+---
+<div class="wrap narrow article">
+  <h1>個案心得</h1>
+  <p class="note">每一篇都經過改寫，並取得當事人同意，不放可辨識的個人細節。</p>
+
+  {% assign all_cases = site.cases | sort: "date" | reverse %}
+  {% include entry-list.html items=all_cases empty_text="第一批個案心得準備中，很快會放上來。" %}
+
+  {% include cta.html %}
+</div>

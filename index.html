@@ -1,0 +1,76 @@
+---
+layout: default
+---
+<section class="hero">
+  <div class="wrap narrow">
+    <p class="eyebrow">四月老師</p>
+    <h1>接住說不清的困擾</h1>
+    <p class="lead">愛情、家庭、親子，或是講不清楚到底卡在哪裡的事。我會依你的狀況，設計適合你的陪伴方式。</p>
+    <p>
+      <a class="btn" href="{{ site.line_url }}">用 LINE 預約</a>
+      <a class="btn ghost" href="{{ '/services/' | relative_url }}">了解服務怎麼進行</a>
+    </p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <h2>你可以來談什麼</h2>
+    <ul class="cards">
+      <li>
+        <h3>愛情</h3>
+        <p>感情卡住、想不通對方、放不下，或不知道下一步該怎麼走。</p>
+      </li>
+      <li>
+        <h3>家庭與親子</h3>
+        <p>和父母、孩子、伴侶的家人之間，一再重複出現的拉扯。</p>
+      </li>
+      <li>
+        <h3>靈性困擾</h3>
+        <p>有些經驗或感受，不知道該怎麼理解，也不知道該怎麼安放。</p>
+      </li>
+      <li>
+        <h3>說不清的疑難雜症</h3>
+        <p>講不出屬於哪一類，但已經困擾你很久的事。</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="block alt">
+  <div class="wrap narrow">
+    <h2>不套公式，依你的狀況設計</h2>
+    <p>每個人遇到的事不一樣，所以沒有固定的流程。我會依你的狀況，從靈擺、能量、談話、魔法、冥想裡，挑出適合你的方法來搭配。</p>
+    <p><a href="{{ '/services/' | relative_url }}">看服務詳情 →</a></p>
+  </div>
+</section>
+
+{% if site.cases.size > 0 %}
+<section class="block">
+  <div class="wrap">
+    <h2>個案心得</h2>
+    {% assign recent_cases = site.cases | sort: "date" | reverse | slice: 0, 3 %}
+    {% include entry-list.html items=recent_cases %}
+    <p><a href="{{ '/cases/' | relative_url }}">看全部個案心得 →</a></p>
+  </div>
+</section>
+{% endif %}
+
+{% if site.posts.size > 0 %}
+<section class="block alt">
+  <div class="wrap">
+    <h2>最新文章</h2>
+    {% assign recent_posts = site.posts | slice: 0, 3 %}
+    {% include entry-list.html items=recent_posts %}
+    <p><a href="{{ '/articles/' | relative_url }}">看全部文章 →</a></p>
+  </div>
+</section>
+{% endif %}
+
+<section class="block">
+  <div class="wrap narrow">
+    <h2>關於四月老師</h2>
+    <p>投入身心靈領域十年以上，也學過心理治療。我把它當成理解人的工具，用在陪伴裡，不拿來做治療。</p>
+    <p><a href="{{ '/about/' | relative_url }}">更多關於我 →</a></p>
+  </div>
+</section>

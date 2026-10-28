@@ -1,0 +1,22 @@
+{% comment %}
+  傳入 items（文章或個案的陣列）與 empty_text（沒有內容時的說明）
+{% endcomment %}
+{% if include.items.size > 0 %}
+  <ul class="entry-list">
+    {% for item in include.items %}
+      <li>
+        <article>
+          <p class="meta">
+            {% if item.topic %}<span class="tag">{{ item.topic }}</span>{% endif %}
+            <time datetime="{{ item.date | date_to_xmlschema }}">{{ item.date | date: "%Y/%m/%d" }}</time>
+          </p>
+          <h3><a href="{{ item.url | relative_url }}">{{ item.title }}</a></h3>
+          {% assign summary = item.description | default: item.excerpt | strip_html | strip | truncate: 90 %}
+          <p>{{ summary }}</p>
+        </article>
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p class="empty">{{ include.empty_text }}</p>
+{% endif %}

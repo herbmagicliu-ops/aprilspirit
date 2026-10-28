@@ -1,0 +1,44 @@
+title: 四月身心靈工作室
+tagline: 接住說不清的困擾
+description: 四月老師的身心靈工作室。依你的狀況設計個別陪伴，談愛情、家庭與親子、靈性困擾，以及說不清的疑難雜症。
+url: "https://aprilspirit.com"
+baseurl: ""
+lang: zh-Hant-TW
+timezone: Asia/Taipei
+
+author: 四月老師
+
+# ---- 要改的設定都在這裡 ----
+# 預約用的 LINE 連結。若與靈火巫境共用同一個官方帳號，維持這個即可；要換再改。
+line_url: "https://line.me/R/ti/p/@sorcery"
+# Brevo 電子報表單的 iframe 網址（src 裡的那串）。沒填的話，頁尾會先顯示「用 LINE 加入」。
+newsletter_embed_url: ""
+# 魔法課程與商品站
+hoodoo_url: "https://hoodoo.pro"
+
+permalink: /articles/:title/
+
+collections:
+  cases:
+    output: true
+    permalink: /cases/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
+  - scope:
+      path: ""
+      type: "cases"
+    values:
+      layout: case
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+exclude:
+  - README.md

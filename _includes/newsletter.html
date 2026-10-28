@@ -1,0 +1,11 @@
+<section class="newsletter" id="newsletter">
+  <div class="wrap narrow">
+    <h2>訂閱電子報</h2>
+    <p>有新的文章或個案心得時，寄給你。隨時可以取消訂閱。</p>
+    {% if site.newsletter_embed_url != "" %}
+      <iframe src="{{ site.newsletter_embed_url }}" width="100%" height="320" frameborder="0" scrolling="auto" loading="lazy" title="電子報訂閱表單"></iframe>
+    {% else %}
+      <p><a class="btn" href="{{ site.line_url }}">先用 LINE 加入，電子報即將開放</a></p>
+    {% endif %}
+  </div>
+</section>

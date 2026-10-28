@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% seo %}
+  {% feed_meta %}
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+  <a class="skip" href="#main">跳到主要內容</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+      <nav aria-label="主選單">
+        <ul>
+          {% for item in site.data.nav %}
+            {% assign active = false %}
+            {% if item.url == "/" %}
+              {% if page.url == "/" %}{% assign active = true %}{% endif %}
+            {% elsif page.url contains item.url %}
+              {% assign active = true %}
+            {% endif %}
+            <li><a href="{{ item.url | relative_url }}"{% if active %} class="active" aria-current="page"{% endif %}>{{ item.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    {{ content }}
+  </main>
+
+  {% include newsletter.html %}
+
+  <footer class="site-footer">
+    <div class="wrap narrow">
+      <p class="disclaimer">
+        四月身心靈工作室提供的是身心靈的陪伴與引導，不是醫療、心理治療或心理諮商，也不能取代它們。
+        如果你正處在急迫的身心狀況，請先找醫師或心理專業人員。
+        如果你有傷害自己的念頭，請撥 1925（24 小時安心專線）。
+      </p>
+      <p class="links">
+        <a href="{{ site.hoodoo_url }}">靈火巫境：魔法課程與商品</a>
+      </p>
+      <p class="copy">© {{ site.time | date: "%Y" }} 四月老師　{{ site.title }}</p>
+    </div>
+  </footer>
+</body>
+</html>
