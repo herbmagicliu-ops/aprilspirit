@@ -1,5 +1,6 @@
 ---
 layout: page
+searchable: true
 title: 關於四月老師
 permalink: /about/
 cta: true

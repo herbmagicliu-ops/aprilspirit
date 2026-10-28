@@ -1,5 +1,6 @@
 ---
 layout: page
+searchable: true
 title: 服務與預約
 permalink: /services/
 description: 依你的狀況設計的一對一身心靈陪伴，談愛情、家庭與親子、靈性困擾，以及說不清的疑難雜症。
